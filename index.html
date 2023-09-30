@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .pr{
+            font-family: cursive;
+            border-radius: 10px;
+            padding: 6px;
+            margin-bottom: 4px;
+            background-color: #1e1e1e;
+            width: 288px;
+        }
+        body{
+            background-color: black;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .changeBackground{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 34px;
+            width: 34px;
+            background-color: rgb(18, 18, 18);
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: 50%;
+            margin: 4px;
+        }
+        .options{
+            background-color: whitesmoke;
+            position: absolute;
+            top: 42px;
+            right: 12px;
+            height: auto;
+            width: 116px;
+            display: none;
+            text-align: center;
+            font-family: cursive;
+            
+        }
+        .bgs{
+            color: rgb(152, 150, 150);
+            cursor: pointer;
+        }
+        .bgs p:hover{
+            background-color: rgb(255, 253, 253);
+        }
+        .changeBackground:hover{
+            cursor: pointer;
+        }
+        .cont{
+            display: none;
+        }
+        .container{
+            
+            width: 315px;
+            height: auto;
+            background-color: white;
+            border-radius: 20px ;
+        }
+       
+        .container-search{
+            width: 100%;
+            /* background-color: green;  */
+            border-radius: 20px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            
+        }
+        #search-text{
+            background-color: gainsboro;
+            border: none;
+            border-radius: 10px;
+            height: 30px;
+            width: 228px;
+            padding: 10px;
+        }
+        #search-text:hover{
+            outline: none;
+            
+        }
+        .search-icon{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: gainsboro;
+        }
+        .search-icon:hover{
+            cursor: pointer;
+        }
+      
+        .container-details{
+            border-radius: 20px;
+            width: 100%;
+            /* background-color: yellow; */
+            height: calc(100% - 228px);
+        }
+
+        .container-image{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            /* background-color: blue; */
+            height: 180px;
+            justify-content: space-evenly;/
+            /* border-radius: 10px; */
+        }
+        .image-real{
+            /* background-image: url(rain.jpg); */
+            /* background-color: green; */
+            background-size: cover;
+            height: 110px;
+            width: 110px;
+        }
+        img{
+            height: 110px;
+            width: 120px;
+        }
+        .image-details{
+            /* background-color: gray; */
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .image-details-temp{
+            font-weight: bolder;
+            font-size: 30px;
+            height: 40px;
+        }
+        .image-details-temp-text{
+            border-radius: 4px;
+            padding: 4px;
+            /* background-color: #8f998f; */
+            width: auto;
+            font-size: 20px;
+            font-weight: 200;
+        }
+        .container-details-up{
+            height: 50px;
+            width: 100%;
+            /* background-color: green; */
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .up-humidity{
+            display: flex;
+            justify-content: start;
+            width: 150px;
+            height: 40px;
+            /* background-color: gray; */
+            
+        }
+      
+        .up-humidity-icon{
+            /* background-color: red; */
+            width: 40px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .up-humidity-text{
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            width: auto;
+            /* background-color: purple;     */
+            justify-content: center;
+        }
+        .humidity-text{
+            font-size: 10px;
+        }
+        .humidity-num{
+            font-weight: bold;
+        }
+
+        .up-speed{
+            display: flex;
+            justify-content: end;
+            width: 150px;
+            height: 40px;
+            /* background-color: greenyellow; */
+            display: flex;
+        }
+.ht{
+    padding-right: 8px;
+}
+.c-t-d{
+    /* background-color: brown; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-details-down{
+            height: 50%;
+            margin: 4px;
+            width: 280px;
+            border-radius: 10px;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between  ;
+            padding: 4px;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .down-select-more-info{
+            display: flex;
+            justify-content: center;
+            height: 25px;
+            width: 100%;
+            /* background-color: blue; */
+        }
+        .down-info{
+            display: flex;
+            justify-content: center;
+            height: auto;
+            width: 100%;
+            /* background-color: goldenrod; */
+        }
+        #select{
+            width: 140px;
+            height: 22px;
+            border: none;
+            border-radius: 5px;
+            /* background-color: rgb(194, 199, 204);
+             */
+             background-color: white;
+             text-align: center;
+             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        #select:focus{
+            outline: none;
+        }
+        /* #realDots{
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+        }
+        #realDots:hover{
+            background-color: white;
+            
+        } */
+        video {
+            object-fit: cover;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -5;
+        }
+    </style>
+</head>
+<body>
+   
+    <video playsinline autoplay muted loop poster="" id="bgvid">
+        <!-- <source src="polina.webm" type="video/webm">
+        <source src="vid1.mp4" type="video/mp4"> -->
+      </video>
+
+      <div class="changeBackground" id="dots" >
+        <i class="fa-solid fa-bars" style="color: #ffffff;" onmouseover="openBgOpt()"
+       id="realDots"></i>
+        
+      </div>
+      <div class="options" id="opt">
+        <p>Background's</p>
+        <hr>
+        <div class="bgs" style="text-align: center;">
+            <p onclick="chngBgImg(1) " >bg1</p> <hr>
+            <p onclick="chngBgImg(2)">bg2</p> <hr>
+            <p onclick="chngBgImg(3)">bg3</p> <hr>
+            <p onclick="chngBgImg(4)">bg4</p> <hr>
+            <!-- <p onclick="chngBgImg(64)">NoBackground</p> -->
+        </div> <hr>
+        <p>Live Background's</p>
+        <hr>
+        <div class="bgs" style="text-align: center;">
+            <p onclick="chngBgImg(21)">LiveBg1</p> <hr>
+            <p onclick="chngBgImg(22)">LiveBg2</p> <hr>
+            <p onclick="chngBgImg(23)">LiveBg3</p> <hr>
+            <p onclick="chngBgImg(24)">LiveBg4</p> <hr> <hr>
+            <p onclick="chngBgImg(66)" style="color:  black;">NoBackground</p>
+        </div>
+
+      </div>
+    
+    
+    
+    
+      <div class="pr">
+        <p style="color: white;">Keep input blank to get weather of your current Location <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i></p>
+    </div>
+    
+    <div class="container">
+       
+        <div class="container-search">
+            <input type="text" name="" id="search-text" placeholder="enter city">
+            <div class="search-icon" onclick="getDetails()">
+                <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
+            </div>
+           
+        </div>
+        <div class="cont" id="cont-con">
+        <div class="container-image">
+            <div class="image-real" id="img-real">
+                <img src="rain.png" alt="" srcset="" id="image">
+            </div>
+            <div class="image-details">
+                <p class="image-details-temp">
+                    <span class="temp-deg" id="img-deg">20</span><sup>o</sup>C 
+                </p>
+                <p class="image-details-temp-text">
+                    <span id="img-det-txt">Rain</span>
+                </p>
+                
+            </div>
+        </div>
+        <div class="container-details">
+            <div class="container-details-up">
+                <div class="up-humidity">
+                    <div class="up-humidity-icon">
+                        <i class="fa-solid fa-droplet fa-2xl" style="color: #000000;"></i>
+                    </div>
+                    <div class="up-humidity-text">
+                        <span class="humidity-num">
+                            <span class="" id="humid">45</span><span>%</span>
+                        </span>
+                        <p class="humidity-text">Humidity</p>
+                    </div>
+                </div>
+                <div class="up-speed ht">
+                    <div class="up-humidity-icon">
+                        <i class="fa-solid fa-wind fa-2xl" style="color: #000000;"></i>
+                    </div>
+                    <div class="up-humidity-text">
+                        <span class="humidity-num">
+                            <span class="" id="wind-speed">45</span><span>Km/H</span>
+                        </span>
+                        <p class="humidity-text ">Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="c-t-d">
+                <div class="container-details-down">
+                    <div class="down-select-more-info">
+                        <select name="" id="select" onchange="myfunction()">
+                            <option value="select">--More Details--</option>
+                            <option value="pressure">pressure</option>
+                            <option value="visibility">visibility</option>
+                            
+                          </select>
+                    </div>
+                    <div class="down-info">
+                        <span class="down-info-real" id="sel-txt">
+                              
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+        
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
